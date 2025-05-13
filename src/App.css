@@ -1,0 +1,17 @@
+body{
+  font-family: Outfit , sans-serif;
+  padding-bottom: 100px;
+  scroll-behavior: smooth;
+}
+
+/* Remove default spinner styling */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
