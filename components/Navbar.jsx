@@ -15,13 +15,10 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   const [savedPageOpen, setSavedPageOpen] = useState(true);
   const path = location.pathname;
-  const { userCartData } = useProductData();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [userCartLength, setUserCartLength] = useState(userCartData?.length);
 
   const onConfirm = async () => {
     try {
@@ -38,15 +35,6 @@ const Navbar = () => {
   const onCancel = () => {
     setIsModalOpen(false);
   };
-
-  useEffect(() => {
-    const cart = JSON.parse(sessionStorage.getItem("cart"));
-    if (cart) {
-      setUserCartLength(cart.length);
-    } else {
-      setUserCartLength(0);
-    }
-  }, [userCartData]);
 
   useEffect(() => {
     verifyUser();
@@ -189,7 +177,7 @@ const Navbar = () => {
               />
               {path !== "/cart" && (
                 <p className="bg-black text-white text-xs w-[19px] h-[19px] rounded-full flex justify-center items-center absolute right-0 top-[19px]">
-                  {userCartLength}
+                  !
                 </p>
               )}
             </div>
