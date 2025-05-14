@@ -1,9 +1,11 @@
 import React from "react";
 import axiosInstance from "../axiosInstance";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const AdminNavbar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   return (
     <div className="h-28 px-14 flex justify-between items-center  border border-gray-400">
       <div className="flex flex-col gap-1">
@@ -17,19 +19,21 @@ const AdminNavbar = () => {
           ADMIN PANEL
         </p>
       </div>
-      <button
-        className="w-[12%] uppercase bg-black h-10 text-white text-sm hover:opacity-85 cursor-pointer"
-        onClick={async () => {
-          try {
-            await axiosInstance.delete("/admin/login");
-            navigate("/admin");
-          } catch (error) {
-            console.log("Error is: ", error);
-          }
-        }}
-      >
-        log out
-      </button>
+      {location.pathname === "/admin/home" && (
+        <button
+          className="w-[12%] uppercase bg-black h-10 text-white text-sm hover:opacity-85 cursor-pointer"
+          onClick={async () => {
+            try {
+              await axiosInstance.delete("/admin/login");
+              navigate("/admin");
+            } catch (error) {
+              console.log("Error is: ", error);
+            }
+          }}
+        >
+          log out
+        </button>
+      )}
     </div>
   );
 };

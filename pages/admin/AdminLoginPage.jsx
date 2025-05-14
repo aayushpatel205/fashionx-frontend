@@ -1,13 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { adminLogin } from "../../src/api/adminApis";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { toastStyle } from "../../src/toastStyle";
+import axiosInstance from "../../axiosInstance";
 
 const AdminLoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+
+  const verifyAdmin = async () => {
+    try {
+      await axiosInstance.get(`/admin/auth/verify`);
+      navigate("/admin/home");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    verifyAdmin();
+  }, []);
+  
   return (
     <div className="flex items-center justify-center">
       <div className="h-[340px] w-[25%] shadow-md mt-[100px] rounded-lg p-8 flex flex-col gap-4">
