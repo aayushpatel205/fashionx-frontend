@@ -65,7 +65,7 @@ const HomePage = () => {
 
       <div className="w-[80%] flex gap-6 flex-wrap justify-center">
         {loading ? (
-          <div className="flex justify-center items-center h-screen">
+          <div className="flex justify-center items-center">
             <div className="w-16 h-16 border-4 border-black rounded-full border-t-transparent animate-spin"></div>
           </div>
         ) : (
