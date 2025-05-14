@@ -15,6 +15,7 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
   const [savedPageOpen, setSavedPageOpen] = useState(true);
   const path = location.pathname;
@@ -35,6 +36,7 @@ const Navbar = () => {
   const onCancel = () => {
     setIsModalOpen(false);
   };
+
 
   useEffect(() => {
     verifyUser();
