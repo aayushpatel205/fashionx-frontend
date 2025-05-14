@@ -1,28 +1,22 @@
 import { useState, useRef } from "react";
-import UserDetails from "../components/UserDetails";
-import UserWishlist from "../components/UserWishlist";
-import MyOrderPage from "./MyOrderPage";
 import { uploadImage } from "../uploadImageFunction";
 import { useUserData } from "../src/Context/UserDataContext";
 import { updateProfilePicture } from "../src/api/userApis";
-import prifleImg from "../src/assets/admin_assets/profile-candidate.png";
+import profileImg from "../src/assets/admin_assets/profile-candidate.png";
 
 const ProfilePage = () => {
   const { userData, setUserData } = useUserData();
-  console.log(userData);
   const [imagePreview, setImagePreview] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const fileInputRef = useRef(null); // Ref for hidden file input
 
   const handleImageChange = (e) => {
-    console.log("Hiiiii");
     const file = e.target.files[0];
     if (file) {
       setSelectedFile(file);
       setImagePreview(URL.createObjectURL(file)); // for preview
     }
-    console.log("imgPreviews: ", imagePreview);
   };
 
   const uploadProfilePicture = async () => {
@@ -34,7 +28,6 @@ const ProfilePage = () => {
       const response2 = await updateProfilePicture(userData?.data.id, response);
       setUserData({ ...userData, profilePicture: response });
       isLoading(false);
-      console.log("Upload response:", response2);
     } catch (error) {
       console.error("Error uploading image:", error);
       isLoading(false);
@@ -81,7 +74,7 @@ const ProfilePage = () => {
             />
           ) : !userData?.profilePicture ? (
             <img
-              src="../src/assets/admin_assets/profile-candidate.png"
+              src={profileImg}
               className="h-20 w-20 object-cover"
               alt="Default Profile"
             />

@@ -5,14 +5,17 @@ import { toast, ToastContainer } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useUserData } from "../src/Context/UserDataContext";
 import { toastStyle } from "../src/toastStyle";
+import pwdViewIcon from "../src/assets/frontend_assets/view.png";
+import pwdHideIcon from "../src/assets/frontend_assets/hide.png";
+import loginIconSvg from "../src/assets/admin_assets/login.svg"
 
 const LoginPage = () => {
   const navigate = useNavigate();
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const { userData, setUserData } = useUserData();
   const path = isPasswordVisible
-    ? "../src/assets/frontend_assets/view.png"
-    : "../src/assets/frontend_assets/hide.png";
+    ? pwdViewIcon
+    : pwdHideIcon
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const [userDetails, setUserDetails] = useState({
     email: "",
@@ -21,7 +24,7 @@ const LoginPage = () => {
   return (
     <div className="mt-24 flex justify-center">
       <div className="flex flex-col items-center gap-3">
-        <img src="../src/assets/admin_assets/login.svg" />
+        <img src= {loginIconSvg}/>
         <input
           className="w-[85%] border border-gray-700 h-10 px-2 outline-none"
           placeholder="Email"
@@ -63,11 +66,11 @@ const LoginPage = () => {
           onClick={async () => {
             try {
               if (!userDetails.email || !userDetails.password) {
-                toast.error("Please enter email and password",toastStyle);
+                toast.error("Please enter email and password", toastStyle);
                 return;
               }
               if (!emailRegex.test(userDetails.email)) {
-                toast.error("Please enter a valid email address",toastStyle);
+                toast.error("Please enter a valid email address", toastStyle);
                 setUserDetails({ email: "", password: "" });
                 return;
               }
@@ -88,7 +91,7 @@ const LoginPage = () => {
               });
               navigate("/");
             } catch (error) {
-              toast.error(error.response.data.message,toastStyle);
+              toast.error(error.response.data.message, toastStyle);
             }
           }}
         >

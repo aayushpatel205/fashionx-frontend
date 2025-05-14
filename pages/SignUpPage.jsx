@@ -3,12 +3,15 @@ import { Link } from "react-router-dom";
 import { userSignUp } from "../src/api/userApis";
 import { toast, ToastContainer } from "react-toastify";
 import { toastStyle } from "../src/toastStyle";
+import pwdViewIcon from "../src/assets/frontend_assets/view.png"
+import pwdHideIcon from "../src/assets/frontend_assets/hide.png";
+import signupIconSvg from "../src/assets/admin_assets/sign-up.svg"
 
 const SignUpPage = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const path = isPasswordVisible
-    ? "../src/assets/frontend_assets/view.png"
-    : "../src/assets/frontend_assets/hide.png";
+    ? pwdViewIcon
+    : pwdHideIcon
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const [userDetails, setUserDetails] = useState({
     name: "",
@@ -18,7 +21,7 @@ const SignUpPage = () => {
   return (
     <div className="mt-24 flex justify-center">
       <div className="flex flex-col items-center gap-3">
-        <img src="../src/assets/admin_assets/sign-up.svg" />
+        <img src= {signupIconSvg}/>
         <input
           className="w-[85%] border border-gray-700 h-10 px-2 outline-none"
           placeholder="Name"

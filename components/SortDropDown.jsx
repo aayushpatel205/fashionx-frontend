@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { updateOrderStatus } from "../src/api/adminApis";
+import dropdownIcon from "../src/assets/frontend_assets/dropdown_icon.png"
 
 const SortDropDown = ({
   category,
@@ -29,7 +30,7 @@ const SortDropDown = ({
           </span>
         </div>
         <img
-          src="../src/assets/frontend_assets/dropdown_icon.png"
+          src={dropdownIcon}
           className={`w-3 h-5 transform transition-transform ${
             isOpen ? "rotate-270" : "rotate-90"
           }`}

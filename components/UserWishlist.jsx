@@ -5,6 +5,7 @@ import { deleteFromWishlist } from "../src/api/userApis";
 import { toast, ToastContainer } from "react-toastify";
 import { toastStyle } from "../src/toastStyle";
 import { useNavigate } from "react-router-dom";
+import wishlistCart from "../src/assets/admin_assets/wishlist.png"
 
 const UserWishlist = () => {
   const navigate = useNavigate();
@@ -47,7 +48,7 @@ const UserWishlist = () => {
           {!loading && userWishlist?.length === 0 ? (
             <div className="flex gap-8 items-center">
               <img
-                src="../src/assets/admin_assets/wishlist.png"
+                src={wishlistCart}
                 className="h-24 w-24"
               />
               <p className="text-gray-700 font-medium text-3xl">

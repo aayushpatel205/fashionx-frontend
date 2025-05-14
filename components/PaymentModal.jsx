@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { addToOrder } from "../src/api/userApis";
 import { useUserData } from "../src/Context/UserDataContext";
 import { useProductData } from "../src/Context/ProductDataContext";
+import closeIcon from "../src/assets/admin_assets/close.png"
 
 function PaymentModal({ onClose }) {
   const navigate = useNavigate();
@@ -78,7 +79,7 @@ function PaymentModal({ onClose }) {
     <div className="fixed inset-0 bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50">
       <div className="bg-white p-7 w-96 relative shadow-2xl border border-gray-300 flex flex-col">
         <img
-          src="../src/assets/admin_assets/close.png"
+          src={closeIcon}
           className="h-4 w-4 cursor-pointer self-end"
           onClick={onClose}
         />

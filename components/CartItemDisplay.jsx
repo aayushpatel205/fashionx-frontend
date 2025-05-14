@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import dustbinImg from "../src/assets/admin_assets/bin.png";
 
 const CartItemDisplay = ({
   element,
@@ -67,7 +68,7 @@ const CartItemDisplay = ({
           }}
         >
           <img
-            src="../src/assets/admin_assets/bin.png"
+            src={dustbinImg}
             className="h-6 w-6 cursor-pointer"
           />
         </div>

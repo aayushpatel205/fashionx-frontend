@@ -4,6 +4,11 @@ import { useProductData } from "../src/Context/ProductDataContext";
 import axiosInstance from "../axiosInstance";
 import { useUserData } from "../src/Context/UserDataContext";
 import { getUserDetails, userLogout } from "../src/api/userApis";
+import dropdownIcon from "../src/assets/frontend_assets/dropdown_icon.png"
+import bookmarkDark from "../src/assets/frontend_assets/bookmark-dark.png"
+import bookmarkLight from "../src/assets/frontend_assets/bookmark.png"
+import shoppingBag from "../src/assets/admin_assets/shopping-bag.png"
+import profileCandidate from "../src/assets/admin_assets/profile-candidate.png"
 import LogoutModal from "./LogOutModal";
 const Navbar = () => {
   const { userData, setUserData } = useUserData();
@@ -128,7 +133,7 @@ const Navbar = () => {
                 USER
               </p>
               <img
-                src="../src/assets/frontend_assets/dropdown_icon.png"
+                src={dropdownIcon}
                 className={`h-4 w-2 transform transition-transform ${
                   isDropDownOpen ? "rotate-270" : "rotate-90"
                 }`}
@@ -168,8 +173,8 @@ const Navbar = () => {
                 <img
                   src={
                     savedPageOpen
-                      ? "../src/assets/frontend_assets/bookmark-dark.png"
-                      : "../src/assets/frontend_assets/bookmark.png"
+                      ? bookmarkDark
+                      : bookmarkLight
                   }
                   className="h-6 w-6 cursor-pointer"
                 />
@@ -179,7 +184,7 @@ const Navbar = () => {
           <Link to={"/cart"}>
             <div className="relative">
               <img
-                src="../src/assets/admin_assets/shopping-bag.png"
+                src={shoppingBag}
                 className="h-8 w-8 cursor-pointer"
               />
               {path !== "/cart" && (
@@ -204,7 +209,7 @@ const Navbar = () => {
                   src={
                     userData?.profilePicture
                       ? userData.profilePicture
-                      : "../src/assets/admin_assets/profile-candidate.png"
+                      : profileCandidate
                   }
                   className={`cursor-pointer ${
                     userData?.profilePicture

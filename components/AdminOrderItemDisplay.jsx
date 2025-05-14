@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SortDropDown from "./SortDropDown";
+import logisticsImg from "../src/assets/admin_assets/logistics.png"
 
 const AdminOrderItemDisplay = ({ element }) => {
   const [currentStatus, setCurrentStatus] = useState(element.status);
@@ -27,7 +28,7 @@ const AdminOrderItemDisplay = ({ element }) => {
     <div className="w-[88%] min-h-72 shadow-md p-5 flex gap-5 items-start my-2">
       <div className="h-14 w-14 border-2 border-gray-200 flex justify-center items-center ">
         <img
-          src="../src/assets/admin_assets/logistics.png"
+          src={logisticsImg}
           className="h-11 w-11"
         />
       </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ProductCard from "../components/ProductCard";
 import SortDropDown from "../components/SortDropDown";
 import { getProductByCategory, getProductBySearch } from "../src/api/userApis";
+import noProductImg from "../src/assets/admin_assets/no-order.png"
 
 const CollectionPage = () => {
   const [showSearch, setShowSearch] = useState(false);
@@ -214,7 +215,7 @@ const CollectionPage = () => {
               <div className="flex gap-7 items-center">
                 <p className="text-3xl mt-6">No Products found</p>
                 <img
-                  src="../src/assets/admin_assets/no-order.png"
+                  src={noProductImg}
                   className="w-16 h-16 mt-6"
                 />
               </div>

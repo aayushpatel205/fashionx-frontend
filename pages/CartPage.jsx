@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import CartItemDisplay from "../components/CartItemDisplay";
 import { useNavigate } from "react-router-dom";
 import { useProductData } from "../src/Context/ProductDataContext";
+import emptyCart from "../src/assets/admin_assets/empty-cart.png"
 
 const CartPage = () => {
   const navigate = useNavigate();
@@ -47,7 +48,7 @@ const CartPage = () => {
           <div className="flex items-center justify-center gap-5 mt-5">
             <p className="text-gray-700 text-4xl">Your cart is empty</p>
             <img
-              src="../src/assets/admin_assets/empty-cart.png"
+              src={emptyCart}
               className="h-20 w-20"
             />
           </div>

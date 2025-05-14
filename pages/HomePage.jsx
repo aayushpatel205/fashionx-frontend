@@ -4,6 +4,9 @@ import ProductCard from "../components/ProductCard";
 import { getAllProducts } from "../src/api/userApis";
 import { Link } from "react-router-dom";
 import { useUserData } from "../src/Context/UserDataContext";
+import exchangeIcon from "../src/assets/frontend_assets/exchange_icon.png"
+import qualityIcon from "../src/assets/frontend_assets/quality_icon.png"
+import supportIcon from "../src/assets/frontend_assets/support_img.png"
 
 const HomePage = () => {
   const { userData } = useUserData();
@@ -68,7 +71,7 @@ const HomePage = () => {
       <div className="mt-28 flex w-[70%] justify-between">
         <div className="flex flex-col gap-4 items-center">
           <img
-            src="../src/assets/frontend_assets/exchange_icon.png"
+            src={exchangeIcon}
             className="w-10 h-10"
           />
           <div className="flex flex-col items-center">
@@ -82,7 +85,7 @@ const HomePage = () => {
 
         <div className="flex flex-col gap-4 items-center">
           <img
-            src="../src/assets/frontend_assets/quality_icon.png"
+            src={qualityIcon}
             className="w-10 h-10"
           />
           <div className="flex flex-col items-center">
@@ -96,7 +99,7 @@ const HomePage = () => {
 
         <div className="flex flex-col gap-4 items-center">
           <img
-            src="../src/assets/frontend_assets/support_img.png"
+            src={supportIcon}
             className="w-10 h-10"
           />
           <div className="flex flex-col items-center">

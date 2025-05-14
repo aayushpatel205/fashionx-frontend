@@ -1,4 +1,5 @@
 import React from "react";
+import aboutImg from "../src/assets/frontend_assets/about_img.png"
 
 const AboutUsPage = () => {
   return (
@@ -11,7 +12,7 @@ const AboutUsPage = () => {
 
       <div className="w-[100%] px-14 flex justify-around items-center">
         <img
-          src="../src/assets/frontend_assets/about_img.png"
+          src={aboutImg}
           className="w-[35%] h-[500px]"
         />
 

@@ -47,9 +47,9 @@ const MyOrderPage = () => {
 
   useEffect(() => {
     getMyOrders();
-    console.log(userOrders);
   }, [userData]);
-  const location = useLocation();
+
+
   return loading ? (
     <div className="flex justify-center mt-28">
       <div className="w-16 h-16 border-4 border-black rounded-full border-t-transparent animate-spin"></div>

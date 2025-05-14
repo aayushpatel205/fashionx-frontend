@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import AdminAddItem from "../../components/AdminAddItem";
 import AdminOrdersViewPage from "../../components/AdminOrdersViewPage";
 import AdminListItems from "../../components/AdminListItems";
+import plusIcon from "../../src/assets/admin_assets/plus.png"
+import clipboardIcon from "../../src/assets/admin_assets/clipboard.png"
 
 
 const AdminHomePage = () => {
@@ -21,7 +23,7 @@ const AdminHomePage = () => {
           onClick={() => setActivePage("Add Items")}
         >
           <img
-            src="../../src/assets/admin_assets/plus.png"
+            src={plusIcon}
             className="h-6 w-6"
           />
           <p className="font-medium">Add Items</p>
@@ -33,7 +35,7 @@ const AdminHomePage = () => {
           onClick={() => setActivePage("List Items")}
         >
           <img
-            src="../../src/assets/admin_assets/clipboard.png"
+            src={clipboardIcon}
             className="h-6 w-6"
           />
           <p className="font-medium">List Items</p>
@@ -45,7 +47,7 @@ const AdminHomePage = () => {
           onClick={() => setActivePage("Orders")}
         >
           <img
-            src="../../src/assets/admin_assets/clipboard.png"
+            src={clipboardIcon}
             className="h-6 w-6"
           />
           <p className="font-medium">Orders</p>

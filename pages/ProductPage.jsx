@@ -12,6 +12,8 @@ import { ToastContainer, toast } from "react-toastify";
 import { toastStyle } from "../src/toastStyle";
 import { useUserData } from "../src/Context/UserDataContext";
 import { getUserDetails } from "../src/api/userApis";
+import bookmarkDark from "../src/assets/frontend_assets/bookmark-dark.png"
+import bookmarkLight from "../src/assets/frontend_assets/bookmark.png"
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -133,8 +135,8 @@ const ProductPage = () => {
                 }}
                 src={
                   isSaved
-                    ? "../src/assets/frontend_assets/bookmark-dark.png"
-                    : "../src/assets/frontend_assets/bookmark.png"
+                    ? bookmarkDark
+                    : bookmarkLight
                 }
                 className="h-5 cursor-pointer"
               />
