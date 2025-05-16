@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useProductData } from "../src/Context/ProductDataContext";
 import axiosInstance from "../axiosInstance";
 import { useUserData } from "../src/Context/UserDataContext";
 import { getUserDetails, userLogout } from "../src/api/userApis";
@@ -10,8 +9,10 @@ import bookmarkLight from "../src/assets/frontend_assets/bookmark.png"
 import shoppingBag from "../src/assets/admin_assets/shopping-bag.png"
 import profileCandidate from "../src/assets/admin_assets/profile-candidate.png"
 import LogoutModal from "./LogOutModal";
+import { useProductData } from "../src/Context/ProductDataContext";
 const Navbar = () => {
   const { userData, setUserData } = useUserData();
+  const userCartData = useProductData();
   const location = useLocation();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
@@ -179,7 +180,7 @@ const Navbar = () => {
               />
               {path !== "/cart" && (
                 <p className="bg-black text-white text-xs w-[19px] h-[19px] rounded-full flex justify-center items-center absolute right-0 top-[19px]">
-                  !
+                  {userCartData?.length === 0 ? 0 : "!"}
                 </p>
               )}
             </div>

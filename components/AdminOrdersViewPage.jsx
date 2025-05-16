@@ -13,14 +13,12 @@ const AdminOrdersViewPage = () => {
     }
   };
 
-  
-
   useEffect(() => {
     getAllOrdersData();
   }, []);
   
   return (
-    <div className="flex flex-col gap-3 border-l-1 pl-10 py-4">
+    <div className="flex flex-col gap-3 border-l-1 border-gray-400 pl-10 py-4">
       <p className="text-xl text-gray-400 font-medium">Orders Page</p>
 
       {allOrders?.map((element) => {

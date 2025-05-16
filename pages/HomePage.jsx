@@ -38,7 +38,7 @@ const HomePage = () => {
             <span className="font-extralight">OUR BESTSELLERS</span>
           </div>
 
-          <img src={latestArrivals} className="h-14" />
+          <img src={latestArrivals} className="h-[10%]" />
 
           <div className="flex items-center gap-2 text-gray-700 font-medium">
             <span className="font-extralight">SHOP NOW</span>
