@@ -84,13 +84,7 @@ A full-featured, modern fashion e-commerce web application built using the MERN 
 | **Tailwind CSS**   | Styling and responsive design                            |
 | **Framer Motion**  | Animations on payment success/failure pages              |
 | **sessionStorage** | Cart data persistence during session                     |
-| **Cloudinary (optional)** | Image storage and management (if used for product images or profile pictures) |
-
----
-
-## 📷 Screenshots
-
-*Add your app screenshots here to visually demonstrate the features.*
+| **Cloudinary** | Used For image storage and management for both profile pictures of users and for product images |
 
 ---
 
