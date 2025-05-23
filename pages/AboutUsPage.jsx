@@ -20,7 +20,7 @@ const AboutUsPage = () => {
           <p className="flex flex-col gap-5 text-gray-500">
             <p className="font-semibold text-2xl text-gray-700">Who We Are</p>
             <p>
-              Forever was born out of a passion for innovation and a desire to
+              FashionX was born out of a passion for innovation and a desire to
               revolutionize the way people shop online. Our journey began with a
               simple idea: to provide a platform where customers can easily
               discover, explore, and purchase a wide range of products from the
@@ -34,7 +34,7 @@ const AboutUsPage = () => {
             <p className="font-semibold text-2xl text-gray-700">Our Mission </p>
 
             <p>
-              Our mission at Forever is to empower customers with choice,
+              Our mission at FashionX is to empower customers with choice,
               convenience, and confidence. We're dedicated to providing a
               seamless shopping experience that exceeds expectations, from
               browsing and ordering to delivery and beyond.
