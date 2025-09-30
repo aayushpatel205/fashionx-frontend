@@ -92,4 +92,4 @@ A full-featured, modern fashion e-commerce web application built using the MERN 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/fashionx-ecommerce.git
+   git clone https://github.com/aayushpatel205/fashionx-frontend.git
