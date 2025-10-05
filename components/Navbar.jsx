@@ -10,6 +10,7 @@ import shoppingBag from "../src/assets/admin_assets/shopping-bag.png"
 import profileCandidate from "../src/assets/admin_assets/profile-candidate.png"
 import LogoutModal from "./LogOutModal";
 import { useProductData } from "../src/Context/ProductDataContext";
+
 const Navbar = () => {
   const { userData, setUserData } = useUserData();
   const userCartData = useProductData();
@@ -26,6 +27,8 @@ const Navbar = () => {
     try {
       await userLogout();
       setUserData({ data: {}, isVerified: false });
+      setUserCartData([]);
+      setTotalCost(0);
       setIsModalOpen(false);
       navigate("/");
     } catch (error) {
