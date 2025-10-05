@@ -13,7 +13,7 @@ import { useProductData } from "../src/Context/ProductDataContext";
 
 const Navbar = () => {
   const { userData, setUserData } = useUserData();
-  const userCartData = useProductData();
+  const { userCartData, setUserCartData, setTotalCost } = useProductData();
   const location = useLocation();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
