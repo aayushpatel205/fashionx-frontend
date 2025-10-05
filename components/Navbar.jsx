@@ -29,6 +29,7 @@ const Navbar = () => {
       setUserData({ data: {}, isVerified: false });
       setUserCartData([]);
       setTotalCost(0);
+      sessionStorage.clear();
       setIsModalOpen(false);
       navigate("/");
     } catch (error) {
